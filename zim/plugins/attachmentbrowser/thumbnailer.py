@@ -26,7 +26,7 @@
 # 	* Only store failures for permanent failures, to prevent re-doing them
 # 	* Failure is app specific, so subdir with app name and version
 # 	* Failure record is just empty png
-#	* Don't attempt creation when not readable (do not store failure)
+#	* Don't attempt creation when not readable (do not store failure)`
 #
 # Uri according to RFC 2396
 # * file/// for files on localhost
@@ -88,7 +88,7 @@ def pixbufThumbnailCreator(file, thumbfile, thumbsize):
 	functions to create the thumbnail.
 	'''
 	if not (isinstance(file, LocalFile) and isinstance(thumbfile, LocalFile)) \
-	or (os.name == 'nt' and file.basename.endswith('.svg')):
+	or (file.basename.endswith('.svg')):
 		# .svg causes segfaults on windows, even if svg support enabled 
 		raise ThumbnailCreatorFailure
 
